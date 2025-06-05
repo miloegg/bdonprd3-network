@@ -22,7 +22,7 @@ on:
 
 jobs:
   plan_and_apply:
-    uses: miloegg/bdonprd3-nprd3-templates/.github/workflows/cd-template-network.yaml@main
+    uses: miloegg/bdonprd3-nprd3-templates/.github/workflows/cd-template.yaml@main
     name: 'CD'
     permissions:
       id-token: write

@@ -14,7 +14,7 @@ on:
 
 jobs:
   validate_and_plan:
-    uses: miloegg/bdonprd3-nprd3-templates/.github/workflows/ci-template-network.yaml@main
+    uses: miloegg/bdonprd3-nprd3-templates/.github/workflows/ci-template.yaml@main
     name: 'CI'
     permissions:
       id-token: write
