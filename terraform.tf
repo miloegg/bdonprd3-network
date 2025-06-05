@@ -8,13 +8,13 @@ terraform {
   }
 
   # use back the same storage account as the one used in alz but in a different tfstate file
-  backend "azurerm" {
-    resource_group_name  = "rg-bdonprd2-nprd2-state-southeastasia-006"
-    storage_account_name = "stobdonprsou006cyrm"
-    container_name       = "nprd2-tfstate"
-    key                  = "network.tfstate"
-    subscription_id      = "1543411c-a55d-46d6-93bf-2e585fd51376"
-  }
+#   backend "azurerm" {
+#     resource_group_name  = "rg-bdonprd2-nprd2-state-southeastasia-006"
+#     storage_account_name = "stobdonprsou006cyrm"
+#     container_name       = "nprd2-tfstate"
+#     key                  = "network.tfstate"
+#     subscription_id      = "1543411c-a55d-46d6-93bf-2e585fd51376"
+#   }
 }
 
 provider "azurerm" {
