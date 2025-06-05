@@ -10,7 +10,7 @@ resource "azurerm_firewall_policy_rule_collection_group" "example" {
       name = "app_rule_collection1_rule1"
       protocols {
         type = "Http"
-        port = 8080
+        port = 80
       }
       protocols {
         type = "Https"
