@@ -75,10 +75,10 @@ firewall_rule_collection_groups = {
         priority = 100
         rule = [
           {
-            name             = "rule-2"
-            description      = "Block traffic to certain websites"
+            name              = "rule-2"
+            description       = "Block traffic to certain websites"
             destination_fqdns = ["*.test.com"]
-            source_addresses = ["10.0.0.0/24"]
+            source_addresses  = ["10.0.0.0/24"]
             protocols = [
               {
                 type = "Https"
