@@ -7,7 +7,7 @@ firewall_rule_collection_groups = {
       {
         action   = "Allow"
         name     = "app-rule-1"
-        priority = 100
+        priority = 300
         rule = [
           {
             name              = "rule-1"
@@ -29,7 +29,7 @@ firewall_rule_collection_groups = {
       {
         action   = "Dnat"
         name     = "dnat-rule-1"
-        priority = 200
+        priority = 100
         rule = [
           {
             name                = "dnat-rule-1"
@@ -49,7 +49,7 @@ firewall_rule_collection_groups = {
       {
         action   = "Allow"
         name     = "network-rule-1"
-        priority = 300
+        priority = 200
         rule = [
           {
             name                  = "network-rule-1"
@@ -72,7 +72,7 @@ firewall_rule_collection_groups = {
       {
         action   = "Deny"
         name     = "app-rule-2"
-        priority = 100
+        priority = 300
         rule = [
           {
             name              = "rule-2"
@@ -94,7 +94,7 @@ firewall_rule_collection_groups = {
       {
         action   = "Dnat"
         name     = "dnat-rule-2"
-        priority = 200
+        priority = 100
         rule = [
           {
             name                = "dnat-rule-2"
@@ -114,7 +114,7 @@ firewall_rule_collection_groups = {
       {
         action   = "Allow"
         name     = "network-rule-2"
-        priority = 300
+        priority = 200
         rule = [
           {
             name                  = "network-rule-2"
