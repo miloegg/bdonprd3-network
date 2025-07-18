@@ -16,7 +16,7 @@ firewall_rule_collection_groups = {
             destination_addresses = ["20.0.0.0/24"]
             protocols = [
               {
-                type = "Tcp"
+                type = "Http"
                 port = 80
               }
             ]
@@ -29,14 +29,14 @@ firewall_rule_collection_groups = {
       {
         action   = "Dnat"
         name     = "dnat-rule-1"
-        priority = 10
+        priority = 100
         rule = [
           {
             name                = "dnat-rule-1"
             description         = "dnat rule for web server"
             destination_address = "192.168.1.1"
             destination_ports   = ["80"]
-            protocols           = ["Tcp"]
+            protocols           = ["TCP"]
             source_addresses    = ["0.0.0.0/0"]
             translated_address  = "10.0.1.1"
             translated_port     = 8080
@@ -56,7 +56,7 @@ firewall_rule_collection_groups = {
             description           = "Allow traffic from internal network"
             destination_addresses = ["30.0.0.0/24"]
             destination_ports     = ["443"]
-            protocols             = ["Tcp"]
+            protocols             = ["TCP"]
             source_addresses      = ["10.0.0.0/24"]
           }
         ]
@@ -93,14 +93,14 @@ firewall_rule_collection_groups = {
       {
         action   = "Dnat"
         name     = "dnat-rule-2"
-        priority = 20
+        priority = 200
         rule = [
           {
             name                = "dnat-rule-2"
             description         = "dnat rule for https server"
             destination_address = "192.168.2.1"
             destination_ports   = ["443"]
-            protocols           = ["Tcp"]
+            protocols           = ["TCP"]
             source_addresses    = ["0.0.0.0/0"]
             translated_address  = "192.168.3.1"
             translated_port     = 443
@@ -120,7 +120,7 @@ firewall_rule_collection_groups = {
             description           = "Allow network traffic for VPN"
             destination_addresses = ["40.0.0.0/24"]
             destination_ports     = ["22"]
-            protocols             = ["Tcp"]
+            protocols             = ["TCP"]
             source_addresses      = ["10.1.0.0/24"]
           }
         ]
