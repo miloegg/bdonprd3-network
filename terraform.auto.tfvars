@@ -34,7 +34,7 @@ firewall_rule_collection_groups = {
           {
             name                = "dnat-rule-1"
             description         = "dnat rule for web server"
-            destination_address = "192.168.1.1"
+            destination_address = "4.193.224.66"
             destination_ports   = ["80"]
             protocols           = ["TCP"]
             source_addresses    = ["0.0.0.0/0"]
@@ -77,7 +77,7 @@ firewall_rule_collection_groups = {
           {
             name             = "rule-2"
             description      = "Block traffic to certain websites"
-            destination_urls = ["*.example.com"]
+            destination_fqdns = ["*.test.com"]
             source_addresses = ["10.0.0.0/24"]
             protocols = [
               {
@@ -99,7 +99,7 @@ firewall_rule_collection_groups = {
           {
             name                = "dnat-rule-2"
             description         = "dnat rule for https server"
-            destination_address = "192.168.2.1"
+            destination_address = "4.193.224.66"
             destination_ports   = ["443"]
             protocols           = ["TCP"]
             source_addresses    = ["0.0.0.0/0"]
