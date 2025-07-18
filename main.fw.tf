@@ -35,7 +35,7 @@
 #   }
 # }
 
-module "avm_fwrcg_1" {
+module "avm_fwrcg" {
   for_each                                                          = var.firewall_rule_collection_groups
   source                                                            = "Azure/avm-res-network-firewallpolicy/azurerm//modules/rule_collection_groups"
   version                                                           = "0.3.3"
