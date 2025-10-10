@@ -17,23 +17,6 @@ rcg1:
             - type: "Http"
               port: 80
 
-  nat_rule_collection:
-    - action: "Dnat"
-      name: "dnat-rule-1"
-      priority: 100
-      rule:
-        - name: "dnat-rule-1"
-          description: "dnat rule for web server"
-          destination_address: "4.193.224.66"
-          destination_ports:
-            - "80"
-          protocols:
-            - "TCP"
-          source_addresses:
-            - "0.0.0.0/0"
-          translated_address: "10.0.1.1"
-          translated_port: 8080
-
   network_rule_collection:
     - action: "Allow"
       name: "network-rule-1"
