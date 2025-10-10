@@ -1,0 +1,51 @@
+policy1:
+  rule_collection_group_name: "fw-policy-group-1"
+  rule_collection_group_priority: 1000
+
+  application_rule_collection:
+    - action: "Allow"
+      name: "app-rule-1"
+      priority: 300
+      rule:
+        - name: "rule-1"
+          description: "Allow traffic to web servers"
+          source_addresses:
+            - "10.0.0.0/24"
+          destination_fqdns:
+            - "*.example.com"
+          protocols:
+            - type: "Http"
+              port: 80
+
+  nat_rule_collection:
+    - action: "Dnat"
+      name: "dnat-rule-1"
+      priority: 100
+      rule:
+        - name: "dnat-rule-1"
+          description: "dnat rule for web server"
+          destination_address: "4.193.224.66"
+          destination_ports:
+            - "80"
+          protocols:
+            - "TCP"
+          source_addresses:
+            - "0.0.0.0/0"
+          translated_address: "10.0.1.1"
+          translated_port: 8080
+
+  network_rule_collection:
+    - action: "Allow"
+      name: "network-rule-1"
+      priority: 200
+      rule:
+        - name: "network-rule-1"
+          description: "Allow traffic from internal network"
+          destination_addresses:
+            - "30.0.0.0/24"
+          destination_ports:
+            - "443"
+          protocols:
+            - "TCP"
+          source_addresses:
+            - "10.0.0.0/24"

@@ -36,7 +36,8 @@
 # }
 
 module "avm_fwrcg" {
-  for_each                                                          = var.firewall_rule_collection_groups
+  # for_each                                                          = var.firewall_rule_collection_groups
+  for_each                                                          = local.firewall_rule_collection_groups
   source                                                            = "Azure/avm-res-network-firewallpolicy/azurerm//modules/rule_collection_groups"
   version                                                           = "0.3.3"
   firewall_policy_rule_collection_group_firewall_policy_id          = data.terraform_remote_state.alz_output.outputs.virtual_wan_firewall_policy_ids.primary

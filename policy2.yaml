@@ -1,0 +1,51 @@
+policy2:
+  rule_collection_group_name: "fw-policy-group-2"
+  rule_collection_group_priority: 2000
+
+  application_rule_collection:
+    - action: "Deny"
+      name: "app-rule-2"
+      priority: 300
+      rule:
+        - name: "rule-2"
+          description: "Block traffic to certain websites"
+          destination_fqdns:
+            - "*.test.com"
+          source_addresses:
+            - "10.0.0.0/24"
+          protocols:
+            - type: "Https"
+              port: 443
+
+  nat_rule_collection:
+    - action: "Dnat"
+      name: "dnat-rule-2"
+      priority: 100
+      rule:
+        - name: "dnat-rule-2"
+          description: "dnat rule for https server"
+          destination_address: "4.193.224.66"
+          destination_ports:
+            - "443"
+          protocols:
+            - "TCP"
+          source_addresses:
+            - "0.0.0.0/0"
+          translated_address: "192.168.3.1"
+          translated_port: 443
+
+  network_rule_collection:
+    - action: "Allow"
+      name: "network-rule-2"
+      priority: 200
+      rule:
+        - name: "network-rule-2"
+          description: "Allow network traffic for VPN"
+          destination_addresses:
+            - "40.0.0.0/24"
+          destination_ports:
+            - "22"
+          protocols:
+            - "TCP"
+          source_addresses:
+            - "10.1.0.0/24"
