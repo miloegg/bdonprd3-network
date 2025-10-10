@@ -1,5 +1,5 @@
-policy2:
-  rule_collection_group_name: "fw-policy-group-2"
+rcg2:
+  rule_collection_group_name: "fw-rcg-group-2"
   rule_collection_group_priority: 2000
 
   application_rule_collection:
@@ -10,7 +10,7 @@ policy2:
         - name: "rule-2"
           description: "Block traffic to certain websites"
           destination_fqdns:
-            - "*.test.com"
+            - "*.beta.com"
           source_addresses:
             - "10.0.0.0/24"
           protocols:
