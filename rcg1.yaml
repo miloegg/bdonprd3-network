@@ -1,5 +1,5 @@
-policy1:
-  rule_collection_group_name: "fw-policy-group-1"
+rcg1:
+  rule_collection_group_name: "fw-rcg-group-1"
   rule_collection_group_priority: 1000
 
   application_rule_collection:
@@ -12,7 +12,7 @@ policy1:
           source_addresses:
             - "10.0.0.0/24"
           destination_fqdns:
-            - "*.example.com"
+            - "*.alpha.com"
           protocols:
             - type: "Http"
               port: 80
