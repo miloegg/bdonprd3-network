@@ -49,3 +49,8 @@ policy1:
             - "TCP"
           source_addresses:
             - "10.0.0.0/24"
+  timeouts:
+    create: "30m"
+    delete: "30m"
+    read: "5m"
+    update: "30m"
