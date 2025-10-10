@@ -2,8 +2,8 @@ locals {
   yaml_files = fileset(path.module, "*.yaml")
 
   yaml_configs = {
-    for policy in local.yaml_files :
-    policy => yamldecode(file("${path.module}/${file_name}"))
+    for file_name in local.yaml_files :
+    file_name => yamldecode(file("${path.module}/${file_name}"))
   }
 
   firewall_rule_collection_groups = merge(
